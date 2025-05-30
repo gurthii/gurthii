@@ -9,43 +9,49 @@ body {
 h1 {
   font-family: "Roboto", sans-serif;
   font-weight: 200;	
-  font-size: xx-large;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-family: "Gloria Hallelujah", cursive;
+  font-family: "Roboto", sans-serif;
   font-weight: normal;
-  font-size: x-small;
+}
+
+li {
+  font-family: "Roboto", sans-serif;
+  font-weight: lighter;
+  font-size: medium;
+}
+
+#the-box {
+	color: #D50B8B;
+	text-decoration: none;
+	background-color: transparent;
 }
 
 p {
   font-family: "Roboto", sans-serif;
-  font-weight: lighter;
+  font-weight: 100;
   font-size: larger;
 }
-
 /*a:link - a normal, unvisited link*/
 a:link {
 	text-decoration: none;
 	background-color: lightgray;
 	color: black;
 }
-
 /*a:hover - a link when the user mouses over it*/
 a:hover {
 	text-decoration: none;
 	background-color: #D50B8B;
 	color: whitesmoke;
 }
-
-
 /*a:visited - a link the user has visited*/
 a:visited {
 	text-decoration: none;
 	background-color: lightgray;
 	color: black;
 }
-
 /*a:active - a link the moment it is clicked*/
 a:active {
 	text-decoration: none;
@@ -53,12 +59,18 @@ a:active {
 	color: whitesmoke;
 }
 
-
 #span-param {
 	font-style: italic;
 	font-family: "Roboto", sans-serif;
 	font-weight: lighter;
 	font-size: larger;
-
 }
 
+#result {
+	background-color: aquamarine;
+	padding: 1%;
+	font-style: italic;
+}
+#heroName {
+	color: #bf8adf;;
+}
