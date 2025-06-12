@@ -14,3 +14,8 @@ document.getElementById("productForm").addEventListener("submit", function(event
 // document.querySelector("span.-b.-ubpt.-tal.-fs24.-prxs").textContent
 // above line could work but scraping with JavaScript is not recommended due to CORS issues and other limitations. Instead, use server-side scraping or APIs if available. Or handle it with a backend service that fetches the data and sends it to the frontend.
 
+/*
+Hover.io, app that:
+- tracks lifetime and unique hover points on a page
+- displays a heatmap if prompted by user, else just a blank page with a button/question
+*/

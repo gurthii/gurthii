@@ -80,3 +80,7 @@ a:active {
 	  font-weight: 100;
 	  font-size: small;
 }
+
+#questionmark:hover {
+	background-color: rgb(31, 195, 245);
+}
