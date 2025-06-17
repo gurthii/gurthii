@@ -24,10 +24,10 @@ There are four parameters that have to be considered:
 
 Read integer values of these parameters from the standard input and then print the result.
 """
-duration_in_days = int(input())
-total_food_cost_per_day = int(input()) * duration_in_days
-one_way_flight_cost = int(input()) * 2
-cost_of_one_night_in_hotel = int(input()) * (duration_in_days - 1)
+duration_in_days = 3 #int(input())
+total_food_cost_per_day = 20 #int(input()) * duration_in_days
+one_way_flight_cost = 200 #int(input()) * 2
+cost_of_one_night_in_hotel = 100#int(input()) * (duration_in_days - 1)
 
 print(total_food_cost_per_day + one_way_flight_cost + cost_of_one_night_in_hotel)
 
@@ -36,9 +36,33 @@ print(total_food_cost_per_day + one_way_flight_cost + cost_of_one_night_in_hotel
 Write a program that takes two integers as input, representing the length and width of a rectangle, and prints the perimeter and area of the rectangle.
 """
 print("Perimeter and area of a rectangle")
-length, width = int(input()), int(input())
+length, width = 5, 3 #int(input()), int(input())
 perimeter = (2 * length) + (2 * width)
 area = length * width 
 
 print(perimeter)
 print(area)
+
+"""
+min() and max() is that these functions can help you to sort in alphabetical order! If a string is passed as an argument, min() will return the first letter (alphabetically) and max() the last one (somewhat zetabetically).
+"""
+
+print(max("gloomy", "grew", "green"))
+print(min("gloomy", "grey", "green"))
+print(min("green", "grass"))
+print(max("gloomy", "grey", "green"))
+
+"""
+Boolean
+"""
+print(5 and 0 and 12)
+print(True or False)
+print(not (False or True))
+print(5 or " ")
+
+print("---")
+is_raining = True
+have_umbrella = True
+should_stay_home = is_raining and not have_umbrella
+message = "Should I stay home? " + str(should_stay_home)
+print(message)
