@@ -4,45 +4,74 @@ import kotlin.math.pow
 
 fun main() {
     // Learning Sprint #1
-    // assignment/initialization is required before printing a declared variable
+    println("You must assign/initialize a variable before printing it.")
     val isTrue: Boolean
-    // println(isTrue) // will trigger an error
+    // println(isTrue) // will trigger an error "Variable 'isTrue' must be initialized."
     isTrue = false
     println(isTrue)
-
+    println("Similarly, you must declare type to allow future assignment/initialization.")
     /*
-    var isFalse // you must declare type to allow future assignment/initialization;
-    // type inference fails because kotlin has no context
-    isFalse = false
+    var isFalse
+    isFalse = false // type inference fails because kotlin has no context
     println(isFalse)
      */
-
-    // use backticks if you have to use a space in your variable name
-    var `hello guy` = "Some guy"
+    println("Use backticks (like `hello guy`) if you have to use a space in your variable name.")
+    val `hello guy` = "Value of a variable with a name that has a space character."
     println(`hello guy`)
+    println()
 
-    // data types and their sizes
-    println("Short: Min ${Short.MIN_VALUE}, Max ${Short.MAX_VALUE}\nByte: Min ${Byte.MIN_VALUE}, Max ${Byte.MAX_VALUE}")
-    println("Type ${999_999_999_999_999_999::class.simpleName}")
+    // Data types: Numeric
+    println("To get the max/min values of various data types, type datatype name plus a dot then.." +
+            ".SIZE_BYTES/ .SIZE_BITS or .MIN_VALUE/ .MAX_VALUE., for instance:" +
+            "\nByte (${Byte.SIZE_BITS} bits/ ${Byte.SIZE_BYTES} bytes): Min value '${Byte.MIN_VALUE}', Max value '${Byte.MAX_VALUE}'" +
+            "\nShort (${Short.SIZE_BITS} bits/ ${Short.SIZE_BYTES} bytes): Min value '${Short.MIN_VALUE}', Max value '${Short.MAX_VALUE}'" +
+            "\nInt (${Int.SIZE_BITS} bits/ ${Int.SIZE_BYTES} bytes): Min value '${Int.MIN_VALUE}', Max value '${Int.MAX_VALUE}'" +
+            "\nLong (${Long.SIZE_BITS} bits/ ${Long.SIZE_BYTES} bytes): Min value '${Long.MIN_VALUE}', Max value '${Long.MAX_VALUE}'")
+    println("Double (${Double.SIZE_BITS}) is used for double precision instead of the less precise Float ( ${Float.SIZE_BITS} bits)")
+    println("Use '_' to make the numbers readable, e.g., 1_000_000")
+    println()
 
-    // output in one sentence
+    val aLongNumber = 999_999_999_999_999_999
+    println("To get the class name of a given data type, include ::class.simpleName " +
+            "at the end of the value/variable name, e.g., 999_999_999_999_999_999 returns '${aLongNumber::class.simpleName}'")
+    println()
+
+    // print() versus println()
+    println("'println()' outputs a string + new line while 'print()' doesn't meaning subsequent output will be on the same line.") // adds new line
     print(`hello guy`)
     print(isTrue)
+    println()
 
-    // calling a function
+    println("Calling a function, 'funcName():")
     somnText()
 
     // Learning Sprint #2
     var scanner_ = Scanner("one two three four five")
-    println(scanner_.next()) // prints single word
+    println("Using JAVA's scanner features: \nscanner_.next() prints a single word if type matches: ${scanner_.next()}") // prints single word
 
     scanner_ = Scanner("Hello-Kotlin")
+    /*
+    * nextLine(): Reads the entire line of input as a String, including spaces, until a newline character is encountered.
+    * next(): Reads the next token (a sequence of non-whitespace characters) as a String.
+    * nextInt(): Reads the next token as an Int.
+    * nextLong(): Reads the next token as a Long.
+    * nextFloat(): Reads the next token as a Float.
+    * nextDouble(): Reads the next token as a Double.
+    * nextBoolean(): Reads the next token as a Boolean.
+    * nextShort(): Reads the next token as a Short.
+    * hasNext(): Returns true if the scanner has another token in its input.
+    * hasNextLine(): Returns true if there is another line in the input of this scanner.
+    * hasNextInt(), hasNextLong(), etc.: Return true if the next token can be interpreted as the specified data type.
+    * You can also .useDelimiter("-") to separate characters first?
+    * scanner.close(): always close scanner to save on the PC resources
+    * */
+
     scanner_.useDelimiter("-")
     println(scanner_.next())
     println(scanner_.next())
-
     scanner_ = Scanner("hello 123")
     println(scanner_.next())
+
     var num = scanner_.nextInt().toInt()
     num += 5
     num *= 2
@@ -230,7 +259,10 @@ muno
     println("in an expression, b = --a, a is first decreased by 1 ($a) then assigned to b: $b")
 
     // Learning Sprint #6
-    
+    println("Booleans: || is OR, && is AND, ! is NOT, and xor returns true if boolean operands have different values, else false...\n" +
+            "for instance: true xor true returns ${true xor true}")
+
+
 
 
 }
