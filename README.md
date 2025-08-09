@@ -1,4 +1,4 @@
-## Hello traveller!
+# Hello traveller!
 
 I am Joseph, a backend web developer based in Nairobi, KE and available on location and remotely worldwide.
     

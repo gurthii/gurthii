@@ -2,8 +2,6 @@ import requests
 import psycopg2
 from bs4 import BeautifulSoup
 
-
-
 def accept_input():
 	"""Requests any user input"""
 	return input("weka kitu: ").strip()
