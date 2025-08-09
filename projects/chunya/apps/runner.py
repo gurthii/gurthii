@@ -7,7 +7,7 @@ def main():
 	while True:
 		price_updater_app()	
 		print(f"Loop {counter} complete. Waiting for next run...\n")
-		sleep(120) # runs every 1 hour
+		sleep(300) # runs every 5 minutes
 		counter += 1
 			
 if __name__ == "__main__":
