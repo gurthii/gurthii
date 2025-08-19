@@ -159,3 +159,16 @@ class PricesTable(models.Model):
 - save models.py and run migrations
 `py manage.py makemigrations homeapp`
 `py manage.py migrate`
+- adding data via shell would go like:
+```py
+from homeapp.models import ProductsTable
+from homeapp.models import PricesTable
+from decimal import Decimal
+
+n = ProductsTable.objects.create(sku='LY007HA4YYBF2NAFAMZ', name='Lyons FK-0323 Stainless Steel 1.8L Electric Kettle-Black', url='https://www.jumia.co.ke/lyons-fk-0323-stainless-steel-1.8l-electric-kettle-black-305727500.html')
+
+p = PricesTable.objects.create(sku=n, current_price=Decimal("549"))
+
+```
+# Templates
+- displaying info from db to html, create html file in `/templates/` folder
