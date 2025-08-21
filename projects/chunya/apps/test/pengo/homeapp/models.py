@@ -31,3 +31,29 @@ class PricesTable(models.Model):
     def __str__(self):
         return f"{self.sku.sku} - {self.current_price}"
 
+class ProductRequest(models.Model):
+    """Model to handle user requests for product tracking from the home page form"""
+    REQUEST_STATUS = [
+        ('pending', 'Pending'),
+        ('processing', 'Processing'),
+        ('completed', 'Completed'),
+        ('failed', 'Failed'),
+    ]
+    
+    input_data = models.CharField(max_length=500, help_text="Product URL or SKU entered by user")
+    request_type = models.CharField(
+        max_length=10, 
+        choices=[('url', 'URL'), ('sku', 'SKU')],
+        default='url'
+    )
+    status = models.CharField(max_length=20, choices=REQUEST_STATUS, default='pending')
+    created_at = models.DateTimeField(auto_now_add=True)
+    processed_at = models.DateTimeField(null=True, blank=True)
+    notes = models.TextField(blank=True, help_text="Any additional notes or error messages")
+    
+    class Meta:
+        ordering = ['-created_at']
+    
+    def __str__(self):
+        return f"{self.input_data[:50]} - {self.status} ({self.created_at.strftime('%Y-%m-%d')})"
+

@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chunya</title>
-</head>
-<body>
-    <h1>this is Chunya</h1>
-    <form id="productForm" method="post">
-        <input type="text" id="productDetails" name="productParticulars" placeholder="Enter product sku or url" required autofocus>
-        <button type="submit">track it!</button>
-    </form>
-    <p>Examples:</p>
-    <blockquote>
-        SKU - NI534ST019V71NAFAMZ
-    <br>    
-        URL - https://www.jumia.co.ke/nivea-radiant-beauty-advanced-care-lotion-for-women-400ml-pack-of-2-94993120.html
-    </blockquote>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="product_input" class="product-input" placeholder="Input Product URL or SKU" required autofocus>
+    <button type="submit" class="submit-button">SUBMIT</button>
+</form>
+<p class="prod-intro">
+    Save more on Jumia with <span class="logo-span">Tengo</span>. This free price tracker monitors products you love, 
+    alerts you when prices drop, and shows you full price history so you never miss a deal.
+</p>
+{% endblock %}
