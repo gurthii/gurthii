@@ -9,23 +9,12 @@
   <link rel="icon" href="{% static 'favicon.png' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
   
-
 </head>
 <body>
   <header>
     <p class="logos"><a href="/">tengo</a></p> 
   </header> 
   <main>
-    {% if messages %}
-    <div class="messages">
-      {% for message in messages %}
-      <div class="message message-{{ message.tags }}">
-        {{ message }}
-      </div>
-      {% endfor %}
-    </div>
-    {% endif %}
-    
     {% block content %}
     {% endblock %}
   </main>

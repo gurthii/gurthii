@@ -1,15 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}Price History{% endblock %}
+{% load static %}
 
 {% block content %}
 <div class="results-layout">
-    <div class="chart-area">
-        <div class="chart-header">
-            <h3>{{ chart_product.product_name }}</h3>
-            <p class="current-price-display">Current Price: Ksh. {{ chart_product.current_price }}</p>
-            <p class="last-updated">Last updated: {{ chart_product.last_updated }}</p>
-        </div>
-        <canvas id="priceChart"></canvas>
+    <div>
+        <img src="{% static 'defaultchart.png' %}" class="chart-area">
     </div>
     
     <div class="side-actions">
@@ -21,8 +17,8 @@
                 <div class="modal-content">
                     <!-- <h3>Price Tracker</h3> -->
                     <p>Set your desired price and we will notify you via email when the price drops!</p>
-                    <p><span class="current-price">Current Price</span>: Ksh. {{ chart_product.current_price }}</p>
-                    <p class="timestamp">As of {{ chart_product.last_updated }}</p>
+                    <p><span class="current-price">Current Price</span>: Ksh. 369</p>
+                    <p class="timestamp">As of July 25, 2025 12:25 PM</p>
                     
                     <form onsubmit="saveData(event)">
                         <input type="number" name="targetPrice" placeholder="Target Price: " required>
@@ -39,33 +35,4 @@
         <button class="action-button">View on Jumia.co.ke</button>
     </div>
 </div>
-
-<!-- Chart.js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-// Simple chart - no complex config
-document.addEventListener('DOMContentLoaded', function() {
-    const ctx = document.getElementById('priceChart');
-    const chartData = {{ chart_data|safe }};
-    
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: chartData.labels,
-            datasets: [{
-                data: chartData.prices,
-                borderColor: '#333',
-                backgroundColor: 'rgba(51, 51, 51, 0.1)',
-                borderWidth: 2,
-                fill: false
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false
-        }
-    });
-});
-</script>
 {% endblock %}

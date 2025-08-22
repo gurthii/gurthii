@@ -3,12 +3,16 @@
 
 {% block content %}
 <form action="" method="post">
-    {% csrf_token %}
     <input type="text" name="product_input" class="product-input" placeholder="Input Product URL or SKU" required autofocus>
     <button type="submit" class="submit-button">SUBMIT</button>
 </form>
 <p class="prod-intro">
-    Save more on Jumia with <span class="logo-span">Tengo</span>. This free price tracker monitors products you love, 
-    alerts you when prices drop, and shows you full price history so you never miss a deal.
+    Save more on Jumia with <span class="logo-span">Tengo</span>, the ultimate price tracker. 
+    This free website monitors products you love, sends you alerts when prices drop, and shows you the full price history so you never miss a deal.
+</p>
+<p class="prod-intro">Stop overpaying. <span class="logo-span">Start saving.</span></p>
+<p class="prod-intro">
+    Tengo gives you all the information you need to make smarter shopping decisions. 
+    Simply add products to your watchlist and we'll let you know the moment the price goes down.
 </p>
 {% endblock %}

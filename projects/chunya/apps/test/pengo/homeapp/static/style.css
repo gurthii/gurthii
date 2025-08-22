@@ -2,10 +2,16 @@
    BASE STYLES
    ========================================================================== */
 
+@font-face {
+    font-family: 'Lemon Tuesday';
+    src: url('./Lemon Tuesday.otf') format('opentype');
+    font-display: swap;
+}
+
 body {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 300;
-    background-color: #f3dbbd;
+    background: #f3dbbd;
     color: #595959;
     max-width: 70%;
     margin: 0 auto;
@@ -14,12 +20,10 @@ body {
     flex-direction: column;
 }
 
-main {
-    flex: 1;
-}
+main { flex: 1; }
 
 /* ==========================================================================
-   HEADER & LOGO
+   TYPOGRAPHY & LINKS
    ========================================================================== */
 
 .logos {
@@ -28,20 +32,15 @@ main {
     color: black;
 }
 
-.logos a {
-    color: black;
-    text-decoration: none;
+.logos a { color: inherit; text-decoration: none; }
+.anchors { color: inherit; text-decoration: none; }
+
+.logo-span {
+    font-weight: bold;
 }
-
-/* ==========================================================================
-   NAVIGATION & LINKS
-   ========================================================================== */
-
-.anchors {
-    color: #595959;
-    text-decoration: none;
+.prod-intro {
+    text-align: center;
 }
-
 /* ==========================================================================
    FORM STYLES
    ========================================================================== */
@@ -56,19 +55,18 @@ form {
 .product-input {
     flex: 0 0 auto;
     width: min(440px, 80vw);
+    height: 40px;
     padding: 10px 14px;
     border: 1px solid #d0d0d0;
     border-radius: 8px 0 0 8px;
-    background-color: #fff;
+    background: #fff;
     color: #333;
     font-size: 16px;
-    height: 40px;
     box-sizing: border-box;
-    transition: border-color .2s ease;
+    transition: border-color 0.2s;
 }
 
 .product-input:hover { border-color: #b8b8b8; }
-
 .product-input:focus {
     outline: none;
     border-color: #5c5c5c;
@@ -76,18 +74,19 @@ form {
 }
 
 .submit-button {
-    background-color: #333;
+    height: 40px;
+    padding: 10px 20px;
+    margin-left: -1px;
+    background: #333;
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    height: 40px;
-    cursor: pointer;
-    margin-left: -1px;
     border-radius: 0 8px 8px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.submit-button:hover { background-color: #111; }
+.submit-button:hover { background: #111; }
 
 /* ==========================================================================
    RESULTS PAGE
@@ -101,9 +100,9 @@ form {
 }
 
 .chart-area {
-    background-color: #a1a1a1;
-    width: 100%;
-    height: 400px;
+    width: 95%;
+    height: 95%;
+    background: #a1a1a1;
 }
 
 .side-actions {
@@ -113,42 +112,46 @@ form {
 }
 
 .action-button {
-    background-color: #333;
-    color: #dadada;
-    border: none;
-    padding: 12px 18px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
     width: 200px;
     height: 48px;
+    padding: 12px 18px;
+    background: #333;
+    color: #dadada;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.action-button:hover { background-color: #111; }
+.action-button:hover { background: #111; }
 
 /* ==========================================================================
-   MODAL
+   MODAL STYLES
    ========================================================================== */
 
-.button-container {
-    position: relative;
-}
+.button-container { position: relative; }
 
-.modal { 
+.modal {
     display: none;
-    position: absolute; 
-    top: 100%; 
-    left: 0; 
-    width: 350px; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
-    margin-top: 8px;
+    align-items: center;
+    justify-content: center;
 }
 
-.modal-content { 
-    background: #f1f6fc; 
-    padding: 30px; 
+.modal-content {
+    position: relative;
+    width: 350px;
+    padding: 30px;
+    background: #f3dbbd;
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .modal-content h3 {
@@ -158,16 +161,16 @@ form {
 }
 
 .modal-content p {
-    text-align: center;
     margin-bottom: 15px;
+    text-align: center;
     color: #666;
 }
 
 .timestamp {
-    font-style: italic;
-    font-size: 11px;
-    color: #999;
     margin-top: -13px;
+    font-size: 11px;
+    font-style: italic;
+    color: #999;
 }
 
 .modal-content form {
@@ -180,18 +183,15 @@ form {
     width: 100%;
     padding: 12px;
     margin: 0 0 15px 0;
-    border: 2px solid #e1e5e9;
+    border: 1px solid #f3dbbd;
     border-radius: 8px;
-    font-size: 16px;
+    font: 16px 'Noto Sans';
+    font-weight: lighter;
     box-sizing: border-box;
 }
-.modal-content input::placeholder {
-    font-family: 'Noto Sans';
-    font-weight: lighter;
-}
-.modal-content input:focus {
-    outline: none;
-}
+
+.modal-content input:focus { outline: none; }
+.modal-content input::placeholder { font: inherit; }
 
 .modal-buttons {
     display: flex;
@@ -204,37 +204,23 @@ form {
     padding: 12px;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
     font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.2s;
 }
 
-.modal-buttons button[type="button"] {
-    background: #f8f9fa;
-    color: #666;
-}
-
-.modal-buttons button[type="submit"] {
-    background: #007bff;
-    color: white;
-}
-
+.modal-buttons button[type="button"] { background: #f5dbbb; color: #666; }
+.modal-buttons button[type="submit"] { background: #111; color: white; }
 .modal-buttons button:hover { opacity: 0.9; }
 
-.current-price {
-    font-weight: bold;
-}
-
-/* ==========================================================================
-   MODAL SAVE STATUS
-   ========================================================================== */
-
-.modal-content .save-status {
+.current-price { font-weight: bold; }
+.save-status {
     display: none;
     margin: 8px 0 0 0;
     color: #1a7f37;
-    font-size: 14px;
-    text-align: center;
+    font: 14px/1 'Noto Sans';
     font-weight: 600;
+    text-align: center;
 }
 
 /* ==========================================================================
@@ -242,13 +228,13 @@ form {
    ========================================================================== */
 
 footer {
-    text-align: center;
-    padding-top: 2rem;
     margin-top: auto;
+    padding-top: 2rem;
+    text-align: center;
 }
 
 /* ==========================================================================
-   OTHERS
+   RESPONSIVE DESIGN
    ========================================================================== */
 
 @media (max-width: 640px) {
@@ -268,100 +254,4 @@ footer {
         margin-left: 0;
         border-radius: 8px;
     }
-}
-
-@font-face {
-    font-family: 'Lemon Tuesday';
-    src: url('./Lemon Tuesday.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap; 
-}
-
-/* ==========================================================================
-   MESSAGES
-   ========================================================================== */
-
-.messages {
-    margin: 20px auto;
-    max-width: 600px;
-}
-
-.message {
-    padding: 12px 16px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    font-weight: 500;
-    text-align: center;
-}
-
-.message-error {
-    background-color: #fee;
-    color: #c53030;
-    border: 1px solid #feb2b2;
-}
-
-.message-warning {
-    background-color: #fffbeb;
-    color: #92400e;
-    border: 1px solid #fed7aa;
-}
-
-.message-success {
-    background-color: #f0fff4;
-    color: #22543d;
-    border: 1px solid #9ae6b4;
-}
-
-.message-info {
-    background-color: #eff6ff;
-    color: #1e40af;
-    border: 1px solid #93c5fd;
-}
-
-/* ==========================================================================
-   CHART STYLES
-   ========================================================================== */
-
-.chart-area {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.chart-header {
-    text-align: center;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 20px;
-}
-
-.chart-header h3 {
-    margin: 0 0 12px 0;
-    color: #333;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.current-price-display {
-    margin: 8px 0;
-    font-size: 18px;
-    color: #1a7f37;
-    font-weight: 600;
-}
-
-.last-updated {
-    margin: 8px 0 0 0;
-    font-size: 14px;
-    color: #666;
-    font-style: italic;
-}
-
-#priceChart {
-    flex: 1;
-    min-height: 300px;
-    max-height: 400px;
 }
