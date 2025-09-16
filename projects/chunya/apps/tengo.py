@@ -1,6 +1,22 @@
 import requests
 import psycopg2
+import os
+
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
+
+# Path to .env
+env_path = r"C:\Wok Space\01_Learn\LinkedIn Learning 2025\gurthii\.env"
+
+#Loading it
+load_dotenv(dotenv_path=env_path)
+
+# variables
+db_user = os.getenv("DB_USER")
+db_pass = os.getenv("DB_PASSWORD")
+db_name = os.getenv("DB_NAME")
+
+
 
 def accept_input():
 	"""Requests any user input"""
@@ -77,10 +93,10 @@ def get_product_data(input_data):
 def get_connection():
 	# Data config
 	return psycopg2.connect(
-		database = "tengoapp", 
-		user = "tengoboos", 
+		database = db_name,
+		user = db_user,
 	    host= 'localhost',
-	    password = "GArtyPOpGreN",
+	    password = db_pass,
 	    port = 5432
 	    )
 

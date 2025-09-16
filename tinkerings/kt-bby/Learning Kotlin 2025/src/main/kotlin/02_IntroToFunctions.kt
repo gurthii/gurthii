@@ -1,7 +1,7 @@
 fun main(){
     println("kotlin is statically typed: once we've declared a variable with a particular data type, no other type " +
             "of value can go into it.")
-    // FUNCTIONS
+                                                           // FUNCTIONS
     println(greetings("Kinothia", 92))                     // positional arguments (passed in the same order as fn paras)
     println(greetings(age = 30, username = "Shuqo"))       // you can assign your arguments like this too aka named arguments
 
