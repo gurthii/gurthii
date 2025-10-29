@@ -33,7 +33,7 @@
             or <a href="https://www.twitter.com/gurthii/" target="_blank" class="inelement-link">Twitter/Elon's X</a>.   
         </p>
     </section>
-    <section class="my-skills" id="skills" onclick="changeTitle()">
+    <section class="my-skills" id="skills">
         <h2>
             <a href="#home" class="box-link"> <span id="thebox">■</span> </a> skills
         </h2>
@@ -44,21 +44,31 @@
             <li>Version Control: Git, GitHub</li>
         </ul>
     </section>
-    <section class="my-projects" id="projects" onclick="changeTitle()">
-        <h2 >
-            <a href="#home" class="box-link"> <span id="thebox">■</span> </a> projects
-        </h2>
-        <ul>
-            <li>wordpress sites °brand strategy and content management
-                <ul>
-                    <li id="project_clustr">clustrpicks.com</li>
-                    <li id="project_wapi">wapikazi.com</li>
-                </ul>
+    <section class="my-projects" id="projects">
+    <h2>
+        <a href="#home" class="box-link"> <span id="thebox">■</span> </a> projects
+    </h2>
 
-            </li>
-            <li>chunya app °an ecommerce price tracker</li>
-            <li>just hover app °a heatmap of sorts</li>
-        </ul>
+    <ul>
+        <li>wordpress sites °brand strategy and content management
+            <ul>            
+                <li id="project_clustr">
+                    <span class="inelement-link screenshot-trigger" src="/assets/imgs/clustrpicks_screenshot.png">clustrpicks.com</span>
+                </li>
+                <li id="project_wapi">
+                    <span class="inelement-link screenshot-trigger" src="/assets/imgs/wapikazi_screenshot.png">wapikazi.com</span>
+                </li>
+            </ul>
+        </li>
+        <li>chunya app °an ecommerce price tracker</li>
+        <li>just hover app °a heatmap of sorts</li>
+    </ul>
+
+    <!-- popup overlay -->
+    <div id="popup" aria-hidden="true" style="display:none;">
+        <span id="closeBtn" role="button" aria-label="Close popup">&times;</span>
+        <img src="" alt="screenshot preview">
+    </div>
     </section>
 
     <script type="text/javascript" src="./assets/scripts.js"></script>

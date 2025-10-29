@@ -21,11 +21,10 @@ section {
 .navbar {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 60%;
 	padding-bottom: 1rem;
 	padding-top: 1rem;
     z-index: 1000;
-
 }
 
 .navbar-link:link {
@@ -53,14 +52,46 @@ section {
 	background-color: #D50B8B;
 }
 
+/* Overlay setup */
+#popup {
+	display: none;
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	background: rgba(0,0,0,0.5); /* darker tint */
+	backdrop-filter: blur(10px);   /* this does the blur magic */
+	-webkit-backdrop-filter: blur(8px); /* Safari support */
+	overflow-y: auto; /* allow vertical scroll */
+	text-align: center;
+	padding: 60px 0;
+	box-sizing: border-box;
+}
 
-/* 
-.about-me {
-	background-color: #F9B487;
+#popup img {
+	max-width: 90%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-.my-skills {
-	background-color: #427A76;
+
+/* Close button */
+#closeBtn {
+	position: fixed;
+	top: 20px;
+	right: 30px;
+	font-size: 28px;
+	color: white;
+	cursor: pointer;
+	background: rgba(0,0,0,0.4);
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	line-height: 38px;
+	text-align: center;
+	transition: background 0.2s;
+	z-index: 10000;
 }
-.my-projects {
-	background-color: #174143;
-} */
+
+#closeBtn:hover {
+	background: rgba(255,255,255,0.2);
+}

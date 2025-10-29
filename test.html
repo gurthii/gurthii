@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Projects</title>
+<style>
+  .inelement-link {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* Overlay setup */
+  #popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overflow-y: auto;
+    text-align: center;
+    padding: 40px 0;
+    box-sizing: border-box;
+    z-index: 9999;
+  }
+
+  #popup img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+
+  /* Close button */
+  #closeBtn {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    background: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    transition: background 0.2s;
+    z-index: 10000;
+  }
+
+  #closeBtn:hover {
+    background: rgba(255,255,255,0.2);
+  }
+</style>
+</head>
+<body>
+
+<ul>
+  <li>wordpress sites °brand strategy and content management
+    <ul>
+      <li><span class="inelement-link" src="./assets/imgs/clustrpicks_screenshot.png">clustrpicks.com</span></li>
+      <li><span class="inelement-link" src="./assets/imgs/wapikazi_screenshot.png">wapikazi.com</span></li>
+    </ul>
+  </li>
+  <li>chunya app °an ecommerce price tracker</li>
+  <li>just hover app °a heatmap of sorts</li>
+</ul>
+
+<div id="popup">
+  <span id="closeBtn">&times;</span>
+  <img src="">
+</div>
+
+<script>
+  const popup = document.getElementById('popup');
+  const popupImg = popup.querySelector('img');
+  const closeBtn = document.getElementById('closeBtn');
+
+  document.querySelectorAll('.inelement-link').forEach(link => {
+    link.addEventListener('click', () => {
+      popupImg.src = link.getAttribute('src');
+      popup.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+      popup.scrollTop = 0;
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+</script>
+
+</body>
+</html>
