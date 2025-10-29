@@ -1,25 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Joseph G. | About me</title>
-	<link rel="icon" href="./assets/favicon.png">
-	<link rel="stylesheet" type="text/css" href="./assets/styles.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/styles.css">
+    <link rel="icon" href="/assets/imgs/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Met Me? Meet Me</title>
 </head>
 <body>
-	<h1><a href="." id="the-box">■</a>Hello, I'm Joseph Gathii,</h1>
-	<p id="span-param"> Backend Engineer based in Nairobi, Kenya.</p>
+    <section class="about-me" id="home">
+        <nav class="navbar">
+            <a href="#home" class="navbar-link">home</a> / <a href="#skills" class="navbar-link">skills</a> / <a href="#projects" class="navbar-link">projects</a>
+        </nav>
+        <h1>
+            <a href="#home" class="box-link"> <span id="thebox">■</span> </a> about me
+        </h1>
+        <p>
+            <span class="title"> Hello, I'm Joseph Gathii,</span>
+            <span class="subtitle">a Backend Engineer based in Nairobi, Kenya. </span>
+        </p>
+        <p>
+            I'm actively freelancing on Upwork at the moment, but available for exciting new offers.
+         </p>
+         <p>   
+            Hang on now — explore my tech & life musings over at <a href="https://medium.com/@gathii" target="_blank" class="inelement-link">Medium</a>
+            and take a peek at some of my   <a href="#projects" class="inelement-link">favorite projects</a> below.
+            
+            ...and of course, feel free to drop me a chat on <a href="https://www.linkedin.com/in/gathii/" target="_blank" class="inelement-link">LinkedIn</a>
+            or <a href="https://www.twitter.com/gurthii/" target="_blank" class="inelement-link">Twitter/Elon's X</a>.   
+        </p>
+    </section>
+    <section class="my-skills" id="skills" onclick="changeTitle()">
+        <h2>
+            <a href="#home" class="box-link"> <span id="thebox">■</span> </a> skills
+        </h2>
+        <ul>
+            <li>Languages: Python, JavaScript (Node.js)</li>
+            <li>Frameworks: Django, Flask</li>
+            <li>Databases: PostgreSQL, MySQL, MongoDB</li>
+            <li>Mobile: Kotlin</li>
+            <li>Version Control: Git, GitHub</li>
+        </ul>
+    </section>
+    <section class="my-projects" id="projects" onclick="changeTitle()">
+        <h2 >
+            <a href="#home" class="box-link"> <span id="thebox">■</span> </a> projects
+        </h2>
+        <ul>
+            <li>wordpress sites °brand strategy and content management
+                <ul>
+                    <li id="project_clustr">clustrpicks.com</li>
+                    <li id="project_wapi">wapikazi.com</li>
+                </ul>
 
-	<p>I’m actively freelancing on Upwork at the moment, but available for exciting new offers.</p>
+            </li>
+            <li>chunya app °an ecommerce price tracker</li>
+            <li>just hover app °a heatmap of sorts</li>
+        </ul>
+    </section>
 
-	<p>Hang out a while—explore my "tech" & life musings on <a href="https://medium.com/@JosefEmu" target="_blank"> Medium </a> and take a peek at some of my favorite projects right <a href="./projects/"> here</a>.</p>
-
-	<p>...and of course, feel free to drop me a chat on <a href="https://www.linkedin.com/in/gathii/" target="_blank">LinkedIn.</a> </p>
-
-	<script type="text/javascript" src="./scripts.js"></script>
+    <script type="text/javascript" src="./assets/script.js"></script>
 </body>
 </html>

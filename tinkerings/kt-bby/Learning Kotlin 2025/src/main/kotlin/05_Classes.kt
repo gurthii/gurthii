@@ -18,4 +18,3 @@ fun main () {
     println(aRectangle.perimeter())
     println(aRectangle.area())
 }
-
